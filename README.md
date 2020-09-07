@@ -1,5 +1,5 @@
 # Library-NETCORE
-- Projeto para apresentações.
+- Projeto para apresentações (DDD).
 
 # WebApi - .NET CORE 3.0;
 
