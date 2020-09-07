@@ -7,9 +7,3 @@ Steps:
   - Run Build;
   - Run Tests;
   - Start API;
-
-# WebApp - REACT 16.12;
-
-Steps:
-  - npm install;
-  - npm start;
