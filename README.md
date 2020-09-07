@@ -1,7 +1,7 @@
 # Library-NETCORE
 - Projeto para apresentações.
 
-# WEBApi - .NET CORE 3.0;
+# WebApi - .NET CORE 3.0;
 
 Steps:
   - Run Build;
