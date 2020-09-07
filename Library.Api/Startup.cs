@@ -21,6 +21,14 @@ namespace LB_Api
                 config.EnableEndpointRouting = false;
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });
+
             services.AddSqlDependency(Configuration);
             services.AddSqlRepositoryDependency();
             services.AddServiceDependency();
@@ -33,6 +41,7 @@ namespace LB_Api
                 app.UseDeveloperExceptionPage();
 
             app.UseMvc();
+            app.UseCors("CorsPolicy");
             app.UseSwaggerDependency();
         }
     }

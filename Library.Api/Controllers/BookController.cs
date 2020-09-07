@@ -1,12 +1,13 @@
 ﻿using System;
 using Library.Domain.Interfaces;
 using Library.Domain.Model;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LB_Api.Controllers
 {
     [ApiController]
-    [Route("api/books")]
+    [Route("api/[controller]")]
     public class BookController : ControllerBase
     {
         private readonly IServiceBook _serviceBook;
@@ -15,7 +16,7 @@ namespace LB_Api.Controllers
             _serviceBook = serviceBook;
 
         [HttpPost]
-        public IActionResult Register([FromBody] BookModel bookModel)
+        public IActionResult PostBook([FromBody] BookModel bookModel)
         {
             try
             {
@@ -30,7 +31,7 @@ namespace LB_Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult RecoverAll()
+        public IActionResult GetBooks()
         {
             try
             {
@@ -44,7 +45,7 @@ namespace LB_Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Recover([FromRoute] int id)
+        public IActionResult GetBook([FromRoute] int id)
         {
             try
             {
@@ -58,7 +59,7 @@ namespace LB_Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update([FromRoute] int id, [FromBody] BookModelUpdate bookModel)
+        public IActionResult PutBook([FromRoute] int id, [FromBody] BookModelUpdate bookModel)
         {
             try
             {
@@ -73,7 +74,7 @@ namespace LB_Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Remove([FromRoute] int id)
+        public IActionResult DeleteBook([FromRoute] int id)
         {
             try
             {

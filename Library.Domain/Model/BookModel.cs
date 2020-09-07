@@ -14,7 +14,7 @@ namespace Library.Domain.Model
             Description = description;
             Author = author;
             Interpreter = interpreter;
-            Launch = launch;
+            Launch = launch ?? DateTime.Now;
             Price = price;
             Language = language;
         }
