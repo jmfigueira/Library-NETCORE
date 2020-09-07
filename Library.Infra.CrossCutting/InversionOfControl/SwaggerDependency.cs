@@ -26,8 +26,8 @@ namespace Library.Infra.CrossCutting.InversionOfControl
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Aurora API");
-                c.DocumentTitle = "Aurora API";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Library API");
+                c.DocumentTitle = "Library API";
                 c.DocExpansion(DocExpansion.List);
             });
         }

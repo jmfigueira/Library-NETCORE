@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Aurora.Application": {
+    "Library.Application": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

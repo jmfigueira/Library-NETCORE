@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Library.Domain.DTOs;
 using Library.Domain.Interfaces;
 using Library.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +24,26 @@ namespace LB_Api.Controllers
                 var user = _serviceUser.Insert(userModel);
 
                 return Ok(user?.Id);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] UserDto user)
+        {
+            try
+            {
+                var users = _serviceUser.RecoverAll();
+
+                if (users.FirstOrDefault(x => x.Name == user.Name && x.Password == user.Password) != null)
+                {
+                    return Ok();
+                }
+
+                return BadRequest();
             }
             catch (Exception ex)
             {
