@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Library.Domain.Interfaces
 {
-    public interface IRepositoryUser
+    public interface IRepositoryBook
     {
-        void Save(User obj);
+        void Save(Book obj);
 
         void Remove(int id);
 
-        User GetById(int id);
+        Book GetById(int id);
 
-        IList<User> GetAll();
+        IList<Book> GetAll();
     }
 }

@@ -8,7 +8,6 @@ namespace Library.Infra.CrossCutting.InversionOfControl
     {
         public static void AddSqlRepositoryDependency(this IServiceCollection services)
         {
-            services.AddScoped<IRepositoryUser, UserRepository>();
             services.AddScoped<IRepositoryBook, BookRepository>();
         }
     }

@@ -12,10 +12,10 @@ namespace Library.Infra.Data.Mapping
 
             builder.HasKey(prop => prop.Id);
 
-            builder.Property(prop => prop.Name)
+            builder.Property(prop => prop.Title)
                 .HasConversion(prop => prop.ToString(), prop => prop)
                 .IsRequired()
-                .HasColumnName("Name")
+                .HasColumnName("Title")
                 .HasColumnType("varchar(100)");
 
             builder.Property(prop => prop.Description)
@@ -29,6 +29,28 @@ namespace Library.Infra.Data.Mapping
                 .IsRequired()
                 .HasColumnName("Author")
                 .HasColumnType("varchar(100)");
+
+            builder.Property(prop => prop.Interpreter)
+                 .HasConversion(prop => prop.ToString(), prop => prop)
+                 .IsRequired()
+                 .HasColumnName("Interpreter")
+                 .HasColumnType("varchar(100)");
+
+            builder.Property(prop => prop.Launch)
+                .IsRequired()
+                .HasColumnName("Launch")
+                .HasColumnType("date");
+
+            builder.Property(prop => prop.Price)
+                .IsRequired()
+                .HasColumnName("Price")
+                .HasColumnType("float");
+
+            builder.Property(prop => prop.Language)
+                 .HasConversion(prop => prop.ToString(), prop => prop)
+                 .IsRequired()
+                 .HasColumnName("Language")
+                 .HasColumnType("varchar(100)");
         }
     }
 }

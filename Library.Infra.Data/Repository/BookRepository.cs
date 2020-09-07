@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Library.Infra.Data.Repository
 {
-    public class UserRepository : BaseRepository<User, int>, IRepositoryUser
+    public class BookRepository : BaseRepository<Book, int>, IRepositoryBook
     {
-        public UserRepository(EFCoreContext mySqlContext) : base(mySqlContext)
+        public BookRepository(EFCoreContext sqlContext) : base(sqlContext)
         {
         }
 
@@ -15,7 +15,7 @@ namespace Library.Infra.Data.Repository
             base.Delete(id);
 
 
-        public void Save(User obj)
+        public void Save(Book obj)
         {
             if (obj.Id == 0)
                 base.Insert(obj);
@@ -23,10 +23,10 @@ namespace Library.Infra.Data.Repository
                 base.Update(obj);
         }
 
-        public User GetById(int id) =>
+        public Book GetById(int id) =>
             base.Select(id);
 
-        public IList<User> GetAll() =>
+        public IList<Book> GetAll() =>
             base.Select();
     }
 }
